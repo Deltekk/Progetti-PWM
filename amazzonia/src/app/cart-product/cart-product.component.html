@@ -4,5 +4,9 @@
         <h4 class="name"> <strong> {{ nome }} </strong> </h4>
         <p> {{ prezzo }} </p>
     </div>
-    <button (click)="onRimuovi()"> 🗑️ </button>
+    <div class="buttonDiv">
+        <button (click)="onRimuovi()"> - </button>
+        <p class="countLabel"> ( {{ count }} ) </p>
+        <button (click)="onAggiungi()"> + </button>
+    </div>
 </div>

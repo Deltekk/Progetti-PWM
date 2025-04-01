@@ -9,7 +9,10 @@
 
         @for (prodotto of prodottiSelezionati;  track prodotto.id; let i = $index)
         {
-            <app-cart-product [id]="prodotto.id" [nome]="prodotto.nome" [prezzo]="prodotto.prezzo" [img]="prodotto.img" (rimuoviProdotto)="onRimuoviProdotto(i)"></app-cart-product>
+            <app-cart-product [id]="prodotto.id" [nome]="prodotto.nome" [prezzo]="prodotto.prezzo" [img]="prodotto.img" (rimuoviProdotto)="onRimuoviProdotto(i)" (aggiungiProdotto)="onAggiungiProdotto(i)" [count]="dizionarioProdotti[prodotto.id]"></app-cart-product>
         }
+
+        <button [disabled]="!canBuy" (click)="onPay()"> PAGA {{ arrotondaCeil(totale) }} € </button>
+
     </div>
 </aside>

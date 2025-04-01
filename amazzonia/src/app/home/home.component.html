@@ -1,0 +1,11 @@
+<main>
+    <section>
+        <div id="showerDiv">
+            @for (prodotto of prodotti; track prodotto.id)
+            {
+                <app-product [id]="prodotto.id" [nome]="prodotto.nome" [prezzo]="prodotto.prezzo" [img]="prodotto.img" (aggiungiProdotto)="onProdottoAggiunto($event)"></app-product>
+            }
+        </div>
+    </section>
+    <app-sidebar [prodottiSelezionati]="prodottiSelezionati" [dizionarioProdotti]="dizionarioProdotti" [canBuy]="canBuy"></app-sidebar>
+</main>
