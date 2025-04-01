@@ -1,0 +1,61 @@
+.container{
+    border: solid 2px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    justify-items: center;
+    border-radius: 20px;
+}
+
+.data{
+    padding: 20px;
+}
+
+img{
+    border-radius: 20px 20px 0px 0px;
+}
+
+button{
+    background-color: #EBCD1C;
+    color: black;
+    border: 0px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    transition: all .2s;
+    margin-top: 10px;
+}
+
+button:hover{
+    filter: brightness(90%);
+}
+
+button:active{
+    filter: brightness(80%);
+}
+
+.priceDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: fit-content;
+}
+
+.vecchioPrezzo{
+    font-size: smaller;
+    font-weight: lighter;
+    margin: 10px;
+    margin-top: 2px;
+}
+
+.nuovoPrezzo{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px;
+    margin-bottom: 2px;
+}
+
+.name{
+    font-size: 20px;
+    margin: 10px;
+}

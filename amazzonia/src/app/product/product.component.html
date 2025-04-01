@@ -1,0 +1,11 @@
+<div class="container">
+    <img [src]="img" alt="Immagine Random">
+    <div class="data">
+        <p class="name"> <strong> {{ nome }} </strong> </p>
+        <div class="priceDiv">
+            <p class="nuovoPrezzo"> {{ prezzo }} € </p>
+            <p class="vecchioPrezzo"> Consigliato: <s> {{ arrotondaCeil(prezzo * 1.2)}} € </s> </p>
+        </div>
+        <button (click)="onAggiungi()"> AGGIUNGI AL CARRELLO </button>
+    </div>
+</div>

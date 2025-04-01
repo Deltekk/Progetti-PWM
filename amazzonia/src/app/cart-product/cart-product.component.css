@@ -1,0 +1,26 @@
+#flexOrizzontale{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    gap: 20px;
+    width: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.name{
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+p{
+    margin-top: 5px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
