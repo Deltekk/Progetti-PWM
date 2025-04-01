@@ -1,37 +1,37 @@
 {
-  "hash": "5dc3df71",
-  "configHash": "0043618f",
+  "hash": "2fcf7e6b",
+  "configHash": "4d1310ce",
   "lockfileHash": "64dc57f1",
-  "browserHash": "7a2b08f6",
+  "browserHash": "10e4893c",
   "optimized": {
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "017f80a0",
-      "needsInterop": false
-    },
-    "@angular/platform-browser": {
-      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
-      "file": "@angular_platform-browser.js",
-      "fileHash": "23960b61",
-      "needsInterop": false
-    },
-    "@angular/router": {
-      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
-      "file": "@angular_router.js",
-      "fileHash": "b4130ce9",
-      "needsInterop": false
-    },
-    "@faker-js/faker": {
-      "src": "../../../../../../node_modules/@faker-js/faker/dist/index.js",
-      "file": "@faker-js_faker.js",
-      "fileHash": "056ec5c6",
+      "fileHash": "51d69e12",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "7549de2f",
+      "fileHash": "9623b61c",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "e336e6e3",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "7813f54e",
+      "needsInterop": false
+    },
+    "@faker-js/faker": {
+      "src": "../../../../../../node_modules/@faker-js/faker/dist/index.js",
+      "file": "@faker-js_faker.js",
+      "fileHash": "c7da1ca1",
       "needsInterop": false
     }
   },

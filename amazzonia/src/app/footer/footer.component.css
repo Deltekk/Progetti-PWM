@@ -1,5 +1,5 @@
 footer{
-    width: 100vw;
+    width: 100%;
     height: 10%;
     display: flex;
     flex-direction: row;
@@ -7,6 +7,8 @@ footer{
     justify-items: center;
     gap: 50px;
     background-color: #EBB660;
+}
+
+p{
     padding-left: 50px;
-    padding-right: 50px;
 }

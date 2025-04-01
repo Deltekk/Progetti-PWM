@@ -3,6 +3,10 @@
     <div class="data">
         <p class="name"> <strong> {{ nome }} </strong> </p>
         <div class="priceDiv">
+            <div class="redDiv">
+                <p class="percentage"> 20% di sconto! </p>
+                <p class="time"> Offerta a tempo </p>
+            </div>
             <p class="nuovoPrezzo"> {{ prezzo }} € </p>
             <p class="vecchioPrezzo"> Consigliato: <s> {{ arrotondaCeil(prezzo * 1.2)}} € </s> </p>
         </div>

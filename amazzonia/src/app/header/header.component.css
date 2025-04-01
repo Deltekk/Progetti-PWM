@@ -12,7 +12,9 @@ header{
 h1{
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 50px;
+    padding-left: 50px;
+    width: 50%;
+    text-align: left;
 }
 
 nav{
@@ -22,6 +24,7 @@ nav{
     justify-content: end;
     align-items: center;
     gap: 50px;
+    padding-right: 50px;
 }
 
 a{

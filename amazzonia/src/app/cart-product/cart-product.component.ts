@@ -17,11 +17,11 @@ export class CartProductComponent {
     @Output() aggiungiProdotto = new EventEmitter<Prodotto>();
     @Output() rimuoviProdotto = new EventEmitter<Prodotto>();
 
-    onAggiungi(){
-        this.aggiungiProdotto.emit({id:this.id, nome:this.nome, prezzo:this.prezzo, img:this.img});
+    onAggiungi() {
+        this.aggiungiProdotto.emit({ id: this.id, nome: this.nome, prezzo: this.prezzo, img: this.img });
     }
 
     onRimuovi() {
-        this.rimuoviProdotto.emit({id:this.id, nome:this.nome, prezzo:this.prezzo, img:this.img});
+        this.rimuoviProdotto.emit({ id: this.id, nome: this.nome, prezzo: this.prezzo, img: this.img });
     }
 }
