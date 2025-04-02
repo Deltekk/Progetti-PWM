@@ -4,6 +4,7 @@ import { faker } from '@faker-js/faker';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { ProductComponent } from '../product/product.component';
 import { HeaderComponent } from '../header/header.component';
+import { DataMngtService } from '../data-mngt.service';
 
 @Component({
     selector: 'app-home',
@@ -12,13 +13,10 @@ import { HeaderComponent } from '../header/header.component';
     styleUrl: './home.component.css'
 })
 export class HomeComponent {
-    prodotti: Prodotto[] = [
-        { id: 1, nome: faker.commerce.product(), prezzo: Number(faker.commerce.price()), img: "https://picsum.photos/seed/69420/200" },
-        { id: 2, nome: faker.commerce.product(), prezzo: Number(faker.commerce.price()), img: "https://picsum.photos/seed/69421/200" },
-        { id: 3, nome: faker.commerce.product(), prezzo: Number(faker.commerce.price()), img: "https://picsum.photos/seed/69422/200" },
-        { id: 4, nome: faker.commerce.product(), prezzo: Number(faker.commerce.price()), img: "https://picsum.photos/seed/69423/200" },
-        { id: 5, nome: faker.commerce.product(), prezzo: Number(faker.commerce.price()), img: "https://picsum.photos/seed/69424/200" },
-    ]
+
+    constructor(private datamgnt: DataMngtService){}
+
+    prodotti: Prodotto[] = [];
 
     prodottiSelezionati: Prodotto[] = [];
 
@@ -41,6 +39,10 @@ export class HomeComponent {
         this.canBuy = true;
 
         console.log(this.dizionarioProdotti);
+    }
+
+    ngOnInit(){
+        this.prodotti = this.datamgnt.GetData();
     }
 
     onChangeTotal(totale: number) {

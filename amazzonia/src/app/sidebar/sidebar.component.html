@@ -2,14 +2,13 @@
     <h1> 🛒 IL TUO CARRELLO 🛒 </h1>
     <div id="cartDiv">
 
-        @if(prodottiSelezionati.length == 0)
-        {
-            <p> NON HAI SELEZIONATO NESSUN PRODOTTO! </p>
-        }
-
         @for (prodotto of prodottiSelezionati;  track prodotto.id; let i = $index)
         {
             <app-cart-product [id]="prodotto.id" [nome]="prodotto.nome" [prezzo]="prodotto.prezzo" [img]="prodotto.img" (rimuoviProdotto)="onRimuoviProdotto(i)" (aggiungiProdotto)="onAggiungiProdotto(i)" [count]="dizionarioProdotti[prodotto.id]"></app-cart-product>
+        }
+        @empty 
+        {
+            <p> NON HAI SELEZIONATO NESSUN PRODOTTO! </p>
         }
 
         <button [disabled]="!canBuy" (click)="onPay()"> PAGA {{ arrotondaCeil(totale) }} € </button>

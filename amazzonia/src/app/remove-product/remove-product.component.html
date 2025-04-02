@@ -1,0 +1,15 @@
+<section class="containerSection">
+    <form #formProdotto>
+        <h1> FORM DI RIMOZIONE PRODOTTO </h1>
+    
+        <div class="horizontalDiv">
+            <div class="inputAndLabel">
+                <label for="id">ID: </label>
+                <input type="number" id="id" name="id"  placeholder="" [(ngModel)]="id" required>
+            </div>
+        </div>
+        
+        <input type="submit" value="Rimuovi Prodotto" (click)="removeProdotto()">
+    
+    </form>
+</section>

@@ -1,0 +1,60 @@
+.containerSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 87vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 50px;
+    width: 20%;
+    height: fit-content;
+}
+
+h1{
+    text-align: center;
+}
+
+.horizontalDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.inputAndLabel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+input[type=submit]{
+    width: 100%;
+    font-size: large;
+    transition: all .2s;
+}
+
+input[type=submit]:hover{
+    background-color: green;
+    color: white;
+}
+
+input[type=submit]:active{
+    background-color: darkgreen;
+    color: white;
+}
+
+input[type=number], input[type=text], input[type=submit]{
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    border: solid black;
+}
