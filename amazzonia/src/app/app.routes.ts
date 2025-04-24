@@ -4,12 +4,14 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { RemoveProductComponent } from './remove-product/remove-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
-		redirectTo: 'home'
+		component: LoginComponent,
+		title: 'Login'
 	},
 	{
 		path: 'home',

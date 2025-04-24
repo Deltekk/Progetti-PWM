@@ -1,0 +1,18 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  
+    <label>Name:</label>
+    <input type="name" formControlName="name" />
+
+    @if (loginForm.get('name')?.invalid && loginForm.get('name')?.touched) {
+        <p> Nome obbligatorio. </p>
+    }
+  
+    <label>Email:</label>
+    <input type="email" formControlName="email" />
+    
+    @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+        <p> Email non valida. </p>
+    }
+
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>
