@@ -5,38 +5,54 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { RemoveProductComponent } from './remove-product/remove-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { LoginComponent } from './login/login.component';
+import { NotFoundComponentComponent } from './not-found-component/not-found-component.component';
+import { authGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
+		redirectTo: 'home'
+	},
+	{
+		path: 'login',
 		component: LoginComponent,
 		title: 'Login'
 	},
 	{
 		path: 'home',
 		component: HomeComponent,
-		title: 'Home page'
+		title: 'Home page',
+		canActivate: [authGuard]
 	},
 	{
 		path: 'add',
 		component: AddProductComponent,
-		title: 'Aggiungi prodotto'
+		title: 'Aggiungi prodotto',
+		canActivate: [authGuard]
 	},
 	{
 		path: 'remove',
 		component: RemoveProductComponent,
-		title: 'Rimuovi prodotto'
+		title: 'Rimuovi prodotto',
+		canActivate: [authGuard]
 	},
 	{
 		path: 'about-us',
 		component: AboutUsComponent,
-		title: 'About Us'
+		title: 'About Us',
+		canActivate: [authGuard]
 	},
 	{
 		path: 'edit',
 		component: EditProductComponent,
-		title: 'Modifica prodotto'
+		title: 'Modifica prodotto',
+		canActivate: [authGuard]
+	},
+	{
+		path: '**',
+		component: NotFoundComponentComponent,
+		title: 'Pagina non trovata'
 	}
-	
+
 ]

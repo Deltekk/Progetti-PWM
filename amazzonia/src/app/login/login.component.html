@@ -1,18 +1,40 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  
-    <label>Name:</label>
-    <input type="name" formControlName="name" />
+<div class="container">
 
-    @if (loginForm.get('name')?.invalid && loginForm.get('name')?.touched) {
-        <p> Nome obbligatorio. </p>
+    @if (isLogin){
+        <h1> LOGIN </h1>
+        <p> Oppure <i (click)="changeMode()"> registrati </i> </p>
     }
-  
-    <label>Email:</label>
-    <input type="email" formControlName="email" />
+    @else{
+        <h1> SIGNIN </h1>
+        <p> Oppure <i (click)="changeMode()"> accedi </i> </p>
+    }
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <label>Name:</label>
+        <input type="text" formControlName="name" />
     
-    @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
-        <p> Email non valida. </p>
+        @if (loginForm.get('name')?.invalid && loginForm.get('name')?.touched) {
+            <p class="error"> Nome obbligatorio. </p>
+        }
+        
+        <label>Email:</label>
+        <input type="email" formControlName="email" />
+        
+        @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+            <p class="error"> Email non valida. </p>
+        }
+    
+        <button type="submit" [disabled]="loginForm.invalid"> 
+            @if (isLogin) { Login } @else { Signin }
+        </button>
+    </form>
+
+    @if (statusText)
+    {
+        <p> {{statusText}} </p>
     }
 
-  <button type="submit" [disabled]="loginForm.invalid">Login</button>
-</form>
+</div> 
+
+
+

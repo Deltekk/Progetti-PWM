@@ -6,5 +6,10 @@
         <a routerLink="/edit"> MODIFICA PRODOTTO </a>
         <a routerLink="/remove"> RIMUOVI PRODOTTO </a>
         <a routerLink="/about-us"> CHI SIAMO </a>
+
+        @if(isLogged)
+        {
+            <a (click)="logout()" > LOGOUT </a>
+        }
     </nav>
 </header>

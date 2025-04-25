@@ -76,7 +76,7 @@ app.get('/otp', (req, res) => {
 });
 
 // POST per aggiungere un nuovo utente
-app.post('/addUser', async (req, res) =>{
+app.post('/addUser', async (req, res) => {
     // 1. Validazione dei dati in input
     console.log(req.body); // Logga l'intero oggetto ricevuto
     const { name, email } = req.body;
@@ -127,6 +127,92 @@ app.post('/addUser', async (req, res) =>{
     } catch (err) {
         console.error('Errore database:', err);
         res.status(500).json({ error: 'Errore interno del server' });
+    }
+});
+
+app.post('/login', async(req, res) => {
+    console.log(req.body);
+
+    try{
+
+    const name = req.body.name;
+    const email = req.body.email;
+
+    if(!name || !email)
+        return res.status(400).json({message: 'Username ed email sono richiesti'});
+
+    db.get('SELECT * FROM users WHERE name = ? AND email = ?', [name, email], async (err, user) => {
+        if (err){
+            return res.status(500).json({message: 'Errore del server'});
+        }
+
+        if (!user) {
+            return res.status(401).json({message: 'Credenziali non valide!'});
+        }
+
+        console.log(user);
+
+        res.json({
+            message: 'Login effettuato con successo',
+            user: {id: user.id, name: user.name, email: user.email}
+        });
+
+    });
+    } catch(error){
+        res.status(500).json({message: 'Errore del server'});
+    }
+});
+
+app.post('/signin', async(req, res) => {
+    console.log(req.body);
+
+    try
+    {
+        const name = req.body.name;
+        const email = req.body.email;
+
+        if(!name || !email)
+            return res.status(400).json({message: 'Username ed email sono richiesti'});
+
+        const userExists = await new Promise((resolve, reject) => {
+            db.get('SELECT * FROM users WHERE name = ? OR email = ?', [name, email], (err, row) => {
+                if (err) reject(err);
+                resolve(row);
+            });
+        });
+
+        // Controlliamo se l'utente esiste
+        if(userExists){
+            return res.status(409).json({
+                success:false,
+                message: 'Username o email già in uso'
+            });
+        }
+
+        // Inseriamo l'utente
+        const result = await new Promise((resolve, reject) => {
+            db.run('INSERT INTO users (name, email) VALUES (?, ?)',
+                [name, email],
+                function(err){
+                    if (err) reject(err);
+                    resolve(this);
+                }
+            );
+        });
+
+        res.status(201).json({ 
+            success: true,
+            message: 'Utente registrato con successo',
+            user: { id: result.lastID, name, email }
+        });
+
+    } catch(error)
+    {
+        console.error('Errore registrazione:', error);
+        res.status(500).json({ 
+            success: false,
+            message: 'Errore durante la registrazione' 
+        });
     }
 });
 
