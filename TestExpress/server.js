@@ -24,7 +24,7 @@ app.use(cors({
 }));
 
 // Specifichiamo la porta sulla quale il server ascolterà le richieste
-const PORT = 8300;
+const PORT = 8000;
 
 // Definiamo un middleware che verrà eseguito per ogni richiesta ricevuta dal server
 // Questo è utile per poter fare logging o eseguire controlli specifici
